@@ -10,10 +10,11 @@ import javax.inject.Inject
 
 internal class DepositCommand @Inject internal constructor(
     private val database: Database,
-    private val outputter: Outputter): DoubleArgCommand() {
+    private val outputter: Outputter
+) : DoubleArgCommand() {
 
     init {
-        println("Creating a new $this");
+        println("Creating a new $this")
     }
 
     /** Handles the double argument to the command.  */

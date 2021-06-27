@@ -1,6 +1,6 @@
 package com.anshul.disamples.atmdagger
 
-internal abstract class SingleArgCommand: Command {
+internal abstract class SingleArgCommand : Command {
 
 
     /** Process the rest of the command's words and do something.  */

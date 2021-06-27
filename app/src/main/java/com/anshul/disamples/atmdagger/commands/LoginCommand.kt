@@ -9,10 +9,11 @@ import javax.inject.Inject
 
 internal class LoginCommand @Inject constructor(
     private val outputter: Outputter,
-    private val database: Database): SingleArgCommand() {
+    private val database: Database
+) : SingleArgCommand() {
 
     init {
-        println("Creating a new $this");
+        println("Creating a new $this")
     }
 
     /** Handles the single argument to the command.  */

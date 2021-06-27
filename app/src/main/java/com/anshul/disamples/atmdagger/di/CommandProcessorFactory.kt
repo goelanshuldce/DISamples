@@ -5,7 +5,7 @@ import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [UserCommandsModule::class, SystemOutModule::class])
+@Component(modules = [CommandsModule::class, SystemOutModule::class, UserCommandsRouter.InstallationModule::class])
 internal interface CommandProcessorFactory {
     fun commandProcessor(): CommandProcessor
 

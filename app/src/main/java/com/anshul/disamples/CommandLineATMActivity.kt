@@ -1,14 +1,10 @@
 package com.anshul.disamples
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.anshul.disamples.atmdagger.Command
 import com.anshul.disamples.atmdagger.CommandProcessor
-import com.anshul.disamples.atmdagger.di.*
-import com.anshul.disamples.atmdagger.di.CommandRouterFactory
-import com.anshul.disamples.atmdagger.di.SystemOutModule
-import com.anshul.disamples.atmdagger.di.UserCommandsModule
-import dagger.Component
+import com.anshul.disamples.atmdagger.di.CommandProcessorFactory
 
 
 class CommandLineATMActivity : AppCompatActivity() {
@@ -19,9 +15,9 @@ class CommandLineATMActivity : AppCompatActivity() {
 
     init {
         val commandProcessor: CommandProcessor = CommandProcessorFactory.create().commandProcessor()
-        while (true){
+        while (true) {
             val result = commandProcessor.process("deposit colin 2")
-            if (result == Command.Status.INPUT_COMPLETED){
+            if (result == Command.Status.INPUT_COMPLETED) {
                 break
             }
         }

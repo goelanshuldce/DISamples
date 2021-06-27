@@ -1,11 +1,11 @@
 package com.anshul.disamples.atmdagger
 
-import java.util.*
 import javax.inject.Inject
 
 class CommandRouter @Inject internal constructor(
     private val commands: Map<String, @JvmSuppressWildcards Command>,
-    private val outputter: Outputter) {
+    private val outputter: Outputter
+) {
 
     /**
      * Calls [Command.handleInput] on this router's [commands].
@@ -30,7 +30,7 @@ class CommandRouter @Inject internal constructor(
     }
 
     companion object {
-        private fun split(string: String): List<String>{
+        private fun split(string: String): List<String> {
             return string.split(" ")
         }
     }

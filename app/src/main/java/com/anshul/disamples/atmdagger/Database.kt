@@ -10,13 +10,14 @@ import javax.inject.Singleton
 internal class Database @Inject constructor() {
 
     init {
-        println("Creating a new $this");
+        println("Creating a new $this")
     }
 
     private val accounts: MutableMap<String, Account> = HashMap()
+
     @RequiresApi(Build.VERSION_CODES.N)
     fun getAccount(username: String): Account {
-        return accounts.computeIfAbsent(username) {uname ->
+        return accounts.computeIfAbsent(username) { uname ->
             Account(uname)
         }
     }

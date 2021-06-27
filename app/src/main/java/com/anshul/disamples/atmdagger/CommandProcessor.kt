@@ -19,6 +19,7 @@ import javax.inject.Singleton
 @Singleton
 internal class CommandProcessor @Inject internal constructor(firstCommandRouter: CommandRouter) {
     private val commandRouterStack: Deque<CommandRouter> = LinkedList()
+
     init {
         commandRouterStack.push(firstCommandRouter)
     }
